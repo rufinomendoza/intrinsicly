@@ -35,6 +35,10 @@ section {
   display: block;
 }
 
+iframe{
+
+}
+
 audio,
 canvas,
 video {
@@ -173,12 +177,12 @@ textarea {
 }
 
 body {
+  background: url('bg4.png');
   margin-top: 50px;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 20px;
   color: #333333;
-  background-color: #ffffff;
 }
 
 a {
@@ -565,6 +569,9 @@ a:hover {
 }
 
 .container {
+  width:900px;
+  padding:50px;
+  background-color:white;
   margin-right: auto;
   margin-left: auto;
   *zoom: 1;
