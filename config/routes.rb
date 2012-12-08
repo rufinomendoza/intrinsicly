@@ -5,7 +5,7 @@ Intrinsicly::Application.routes.draw do
 
   resources :statements
 
-  root :to => 'statements#index'  
+  root :to => 'businesses#new'  
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

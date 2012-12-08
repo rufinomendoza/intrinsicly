@@ -16,10 +16,10 @@ ActiveRecord::Schema.define(:version => 20121208194216) do
   create_table "businesses", :force => true do |t|
     t.string   "name"
     t.string   "industry"
-    t.float    "wacc"
-    t.float    "terminal"
-    t.datetime "created_at",                    :null => false
-    t.datetime "updated_at",                    :null => false
+    t.float    "wacc",         :default => 0.08
+    t.float    "terminal",     :default => 0.03
+    t.datetime "created_at",                     :null => false
+    t.datetime "updated_at",                     :null => false
     t.float    "current_debt", :default => 0.0
   end
 

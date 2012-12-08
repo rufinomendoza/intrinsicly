@@ -55,17 +55,17 @@ class Statement < ActiveRecord::Base
   end
 
   def self.terminal
-    @business = Business.first # Change this to linked to user
+    @business = Business.last # Change this to linked to user
     @business.terminal
   end
 
   def self.wacc
-    @business = Business.first # Change this to linked to user
+    @business = Business.last # Change this to linked to user
     @business.wacc
   end
 
   def self.current_debt
-    @business = Business.first # Change this to linked to user
+    @business = Business.last # Change this to linked to user
     @business.current_debt
   end
 
