@@ -1,5 +1,6 @@
 <h2>Your business is worth <%= Format.currency(@equity) %></h2>
 
+<div class="navbar navbar-fixed-top navbar-inverse">
 <div class="navbar">
   <div class="navbar-inner">
     <ul class="nav">
@@ -9,8 +10,14 @@
       <li>
         <a href="#calculations" class="smoothScroll">Calculations</a>
       </li>
+      <div class="nav pull-right">
+          <li>
+            <%= link_to 'Back', businesses_url %>
+          </li>
+      </div>
     </ul>
   </div>
+</div>
 </div>
 
 
@@ -94,11 +101,10 @@
 
     <tr><td>Add Back D&A</td>
         <% @statements.each do |statement| %>
-        <td align="right"><%= Format.comma(statement.da) %></td>
+        <td align="right" style="border-bottom: solid 1px"><%= Format.comma(statement.da) %></td>
         <% end %></tr>
 
-
-        <tr><td>Operating Cash Flow</td>
+    <tr><td>Operating Cash Flow</td>
         <% @statements.each do |statement| %>
         <td align="right"><%= Format.comma(statement.ocf) %></td>
         <% end %></tr>        
@@ -110,12 +116,12 @@
 
     <tr><td>Change in NWC</td>
         <% @statements.each do |statement| %>
-        <td align="right"><%= Format.currency(statement.nwc_chg) %></td>
+        <td align="right" style="border-bottom: solid 1px"><%= Format.currency(statement.nwc_chg) %></td>
         <% end %></tr>
 
-    <tr><td>Free Cash Flow</td>
+    <tr><td><b>Free Cash Flow</b></td>
         <% @statements.each do |statement| %>
-        <td align="right"><%= Format.currency(statement.fcf) %></td>
+        <td align="right"><b><%= Format.currency(statement.fcf) %></b></td>
         <% end %></tr>
 
     <tr><td>Time Span</td>
@@ -147,44 +153,5 @@
 <%= link_to 'Add Year', new_statement_path, :class => 'btn btn-small' %>
 
 <a name="calculations"></a> 
-<h3>Calculations</h3>
-<table class="table table-hover">
-<tr><td>Terminal Growth Rate</td>
-    <td align="right"><%= Format.percent_dec(Statement.terminal*100) %></td>
-</tr>
-
-<tr><td>WACC</td>
-    <td align="right"><%= Format.percent_dec(Statement.wacc*100) %></td>
-</tr>
-<tr>
-    <td>Extra Year DCF</td>
-    <td align="right"><%= Format.currency_dec(@extra_year_fcf) %></td>
-</tr>
-<tr>
-    <td>Continuing Value</td>
-    <td align="right"><%= Format.currency_dec(@cv) %></td>
-</tr>
-<tr>
-    <td>Discounted CV</td>
-    <td align="right"><%= Format.currency_dec(@disc_cv) %></td>
-</tr>
-<tr>
-    <td>Sum of Explicit DCF</td>
-    <td align="right"><%= Format.currency_dec(@dcf_explicit) %></td>
-</tr>
-<tr>
-    <td>Enterprise Value</td>
-    <td align="right"><%= Format.currency_dec(@ev) %></td>
-</tr>
-<tr>
-    <td>Current Debt</td>
-    <td align="right"><%= Format.currency_dec(Statement.current_debt) %></td>
-</tr>
-<tr>
-    <td>Equity</td>
-    <td align="right"><%= Format.currency_dec(@equity) %></td>
-</tr>
-</table>
+<%= render 'calculations' %>
 <br />
-
-<%= link_to 'Businesses', businesses_url %>
