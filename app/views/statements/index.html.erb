@@ -94,7 +94,7 @@
 
     <tr><td>Add Back D&A</td>
         <% @statements.each do |statement| %>
-        <td align="right"><%= Format.comma(statement.da) %></td>
+        <td align="right" style="border-bottom: solid 1px"><%= Format.comma(statement.da) %></td>
         <% end %></tr>
 
 
@@ -110,12 +110,12 @@
 
     <tr><td>Change in NWC</td>
         <% @statements.each do |statement| %>
-        <td align="right"><%= Format.currency(statement.nwc_chg) %></td>
+        <td align="right" style="border-bottom: solid 1px"><%= Format.currency(statement.nwc_chg) %></td>
         <% end %></tr>
 
-    <tr><td>Free Cash Flow</td>
+    <tr><td><b>Free Cash Flow</b></td>
         <% @statements.each do |statement| %>
-        <td align="right"><%= Format.currency(statement.fcf) %></td>
+        <td align="right"><b><%= Format.currency(statement.fcf) %></b></td>
         <% end %></tr>
 
     <tr><td>Time Span</td>
