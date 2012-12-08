@@ -1,8 +1,22 @@
-
 <h2>Your business is worth <%= Format.currency(@equity) %></h2>
 
+<div class="navbar">
+  <div class="navbar-inner">
+    <ul class="nav">
+      <li>
+        <a href="#statements" class="smoothScroll">Statements</a>
+      </li>
+      <li>
+        <a href="#calculations" class="smoothScroll">Calculations</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+
+<a name="statements"></a> 
 <h3>Financial Statements</h3>
-<table>
+<table class="table table-hover">
     <th><% @statements.each do |statement| %>
     <td align="right"><%= statement.period %></td>
     <% end %></th>
@@ -14,7 +28,7 @@
 
     <tr><td>Cost of Goods Sold</td>
         <% @statements.each do |statement| %>
-        <td align="right"><%= Format.comma(statement.cgs) %></td>
+        <td align="right" style="border-bottom: solid 1px"><%= Format.comma(statement.cgs) %></td>
         <% end %></tr>
 
     <tr><td>Gross Profit</td>
@@ -24,7 +38,7 @@
 
     <tr><td>Operating Expenses</td>
         <% @statements.each do |statement| %>
-        <td align="right"><%= Format.comma(statement.opex) %></td>
+        <td align="right"style="border-bottom: solid 1px"><%= Format.comma(statement.opex) %></td>
         <% end %></tr>
 
     <tr><td>EBITDA</td>
@@ -34,7 +48,7 @@
 
     <tr><td>D&A</td>
         <% @statements.each do |statement| %>
-        <td align="right"><%= Format.comma(statement.da) %></td>
+        <td align="right" style="border-bottom: solid 1px"><%= Format.comma(statement.da) %></td>
         <% end %></tr>
 
     <tr><td>EBIT</td>
@@ -44,7 +58,7 @@
     
     <tr><td>Interest</td>
         <% @statements.each do |statement| %>
-        <td align="right"><%= Format.comma(statement.interest) %></td>
+        <td align="right" style="border-bottom: solid 1px"><%= Format.comma(statement.interest) %></td>
         <% end %></tr>
 
     <tr><td>Pretax Income</td>
@@ -54,7 +68,7 @@
 
     <tr><td>Tax</td>
         <% @statements.each do |statement| %>
-        <td align="right"><%= Format.comma(statement.tax) %></td>
+        <td align="right" style="border-bottom: solid 1px"><%= Format.comma(statement.tax) %></td>
         <% end %></tr>
 
     <tr><td>Tax Rate</td>
@@ -62,9 +76,9 @@
         <td align="right"><%= Format.percent(statement.tax_rate) %></td>
         <% end %></tr>
 
-    <tr><td>Net Income</td>
+    <tr><td><b>Net Income</b></td>
         <% @statements.each do |statement| %>
-        <td align="right"><%= Format.comma(statement.net_income) %></td>
+        <td align="right"><b><%= Format.comma(statement.net_income) %></b></td>
         <% end %></tr>
 
 <!--This is a line break -->
@@ -119,29 +133,32 @@
         <td align="right"><%= Format.currency_dec(statement.dcf) %></td>
         <% end %></tr>
 
-    <tr><td></td>
+    <tr><td> </td>
         <% @statements.each do |statement| %>
-        <td align="right"><%= link_to 'Edit', edit_statement_path(statement) %></td>
+        <td align="right"><%= link_to 'Edit', edit_statement_path(statement), :class => "btn btn-small" %></td>
         <% end %></tr>
     
-    <tr><td></td>
+    <tr><td> </td>
         <% @statements.each do |statement| %>
-        <td align="right"><%= link_to 'Delete', statement, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td align="right"><%= link_to 'Delete', statement, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-small" %></td>
         <% end %></tr>
 </table>
 
+<%= link_to 'Add Year', new_statement_path, :class => 'btn btn-small' %>
+
+<a name="calculations"></a> 
 <h3>Calculations</h3>
-<table>
+<table class="table table-hover">
 <tr><td>Terminal Growth Rate</td>
-    <td align="right"><%= Format.percent_dec(Statement.terminal) %></td>
+    <td align="right"><%= Format.percent_dec(Statement.terminal*100) %></td>
 </tr>
 
 <tr><td>WACC</td>
-    <td align="right"><%= Format.percent_dec(Statement.wacc) %></td>
+    <td align="right"><%= Format.percent_dec(Statement.wacc*100) %></td>
 </tr>
 <tr>
     <td>Extra Year DCF</td>
-    <td align="right"><%= Format.currency_dec(@extra_year_dcf) %></td>
+    <td align="right"><%= Format.currency_dec(@extra_year_fcf) %></td>
 </tr>
 <tr>
     <td>Continuing Value</td>
@@ -170,6 +187,4 @@
 </table>
 <br />
 
-
-<%= link_to 'Add Year', new_statement_path %>
 <%= link_to 'Businesses', businesses_url %>
