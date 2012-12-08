@@ -1,0 +1,103 @@
+<h1>Listing statements</h1>
+
+<table>
+    <th><% @statements.each do |statement| %>
+    <td align="right"><%= statement.period %></td>
+    <% end %></th>
+
+    <tr><td>Revenue</td>
+        <% @statements.each do |statement| %>
+        <td align="right"><%= Format.currency(statement.revenue) %></td>
+        <% end %></tr>
+
+    <tr><td>Cost of Goods Sold</td>
+        <% @statements.each do |statement| %>
+        <td align="right"><%= Format.comma(statement.cgs) %></td>
+        <% end %></tr>
+
+    <tr><td>Gross Profit</td>
+        <% @statements.each do |statement| %>
+        <td align="right"><%= Format.comma(statement.gp) %></td>
+        <% end %></tr>
+
+    <tr><td>Operating Expenses</td>
+        <% @statements.each do |statement| %>
+        <td align="right"><%= Format.comma(statement.opex) %></td>
+        <% end %></tr>
+
+    <tr><td>EBITDA</td>
+        <% @statements.each do |statement| %>
+        <td align="right"><%= Format.comma(statement.ebitda) %></td>
+        <% end %></tr>
+
+            <tr><td>EBIT</td>
+        <% @statements.each do |statement| %>
+        <td align="right"><%= Format.comma(statement.ebit) %></td>
+        <% end %></tr>
+
+    <tr><td>D&A</td>
+        <% @statements.each do |statement| %>
+        <td align="right"><%= Format.comma(statement.da) %></td>
+        <% end %></tr>
+
+
+    
+    <tr><td>Interest</td>
+        <% @statements.each do |statement| %>
+        <td align="right"><%= Format.comma(statement.interest) %></td>
+        <% end %></tr>
+
+    <tr><td>Pretax Income</td>
+        <% @statements.each do |statement| %>
+        <td align="right"><%= Format.comma(statement.pretax) %></td>
+        <% end %></tr>
+
+    <tr><td>Tax</td>
+        <% @statements.each do |statement| %>
+        <td align="right"><%= Format.comma(statement.tax) %></td>
+        <% end %></tr>
+
+    <tr><td>Tax Rate</td>
+        <% @statements.each do |statement| %>
+        <td align="right"><%= Format.percent(statement.tax_rate) %></td>
+        <% end %></tr>
+
+    <tr><td>Net Income</td>
+        <% @statements.each do |statement| %>
+        <td align="right"><%= Format.comma(statement.net_income) %></td>
+        <% end %></tr>
+    
+    <tr><td>Capex</td>
+        <% @statements.each do |statement| %>
+        <td align="right"><%= Format.comma(statement.capex) %></td>
+        <% end %></tr>
+
+    <tr><td>Change in NWC</td>
+        <% @statements.each do |statement| %>
+        <td align="right"><%= Format.currency(statement.nwc_chg) %></td>
+        <% end %></tr>
+
+    <tr><td>Free Cash Flow</td>
+        <% @statements.each do |statement| %>
+        <td align="right"><%= Format.currency(statement.fcf) %></td>
+        <% end %></tr>
+
+    <tr><td>Time Span</td>
+        <% @statements.each do |statement| %>
+        <td align="right"><%= statement.year_span %></td>
+        <% end %></tr>
+    
+    <tr><td></td>
+        <% @statements.each do |statement| %>
+        <td align="right"><%= link_to 'Edit', edit_statement_path(statement) %></td>
+        <% end %></tr>
+    
+    <tr><td></td>
+        <% @statements.each do |statement| %>
+        <td align="right"><%= link_to 'Delete', statement, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %></tr>
+</table>
+
+<br />
+
+<%= link_to 'Add Year', new_statement_path %>
