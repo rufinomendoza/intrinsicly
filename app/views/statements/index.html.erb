@@ -1,5 +1,7 @@
-<h1>Listing statements</h1>
 
+<h2>Your business is worth <%= Format.currency(@equity) %></h2>
+
+<h3>Financial Statements</h3>
 <table>
     <th><% @statements.each do |statement| %>
     <td align="right"><%= statement.period %></td>
@@ -30,17 +32,15 @@
         <td align="right"><%= Format.comma(statement.ebitda) %></td>
         <% end %></tr>
 
-            <tr><td>EBIT</td>
-        <% @statements.each do |statement| %>
-        <td align="right"><%= Format.comma(statement.ebit) %></td>
-        <% end %></tr>
-
     <tr><td>D&A</td>
         <% @statements.each do |statement| %>
         <td align="right"><%= Format.comma(statement.da) %></td>
         <% end %></tr>
 
-
+    <tr><td>EBIT</td>
+        <% @statements.each do |statement| %>
+        <td align="right"><%= Format.comma(statement.ebit) %></td>
+        <% end %></tr>
     
     <tr><td>Interest</td>
         <% @statements.each do |statement| %>
@@ -66,6 +66,28 @@
         <% @statements.each do |statement| %>
         <td align="right"><%= Format.comma(statement.net_income) %></td>
         <% end %></tr>
+
+<!--This is a line break -->
+    <tr><td height="12">     </td>
+        <% @statements.each do |statement| %>
+        <td align="right"><% Format.comma(statement.net_income) %></td>
+        <% end %></tr>
+
+        <tr><td>EBIAT</td>
+        <% @statements.each do |statement| %>
+        <td align="right"><%= Format.comma(statement.ebiat) %></td>
+        <% end %></tr>
+
+    <tr><td>Add Back D&A</td>
+        <% @statements.each do |statement| %>
+        <td align="right"><%= Format.comma(statement.da) %></td>
+        <% end %></tr>
+
+
+        <tr><td>Operating Cash Flow</td>
+        <% @statements.each do |statement| %>
+        <td align="right"><%= Format.comma(statement.ocf) %></td>
+        <% end %></tr>        
     
     <tr><td>Capex</td>
         <% @statements.each do |statement| %>
@@ -84,9 +106,19 @@
 
     <tr><td>Time Span</td>
         <% @statements.each do |statement| %>
-        <td align="right"><%= statement.year_span %></td>
+        <td align="right"><%= Format.comma(statement.year_span) %></td>
         <% end %></tr>
     
+    <tr><td>Discount Factor</td>
+        <% @statements.each do |statement| %>
+        <td align="right"><%= Format.comma_four(statement.disc_factor) %></td>
+        <% end %></tr>
+
+    <tr><td>Discounted Cash Flow</td>
+        <% @statements.each do |statement| %>
+        <td align="right"><%= Format.currency_dec(statement.dcf) %></td>
+        <% end %></tr>
+
     <tr><td></td>
         <% @statements.each do |statement| %>
         <td align="right"><%= link_to 'Edit', edit_statement_path(statement) %></td>
@@ -98,6 +130,46 @@
         <% end %></tr>
 </table>
 
+<h3>Calculations</h3>
+<table>
+<tr><td>Terminal Growth Rate</td>
+    <td align="right"><%= Format.percent_dec(Statement.terminal) %></td>
+</tr>
+
+<tr><td>WACC</td>
+    <td align="right"><%= Format.percent_dec(Statement.wacc) %></td>
+</tr>
+<tr>
+    <td>Extra Year DCF</td>
+    <td align="right"><%= Format.currency_dec(@extra_year_dcf) %></td>
+</tr>
+<tr>
+    <td>Continuing Value</td>
+    <td align="right"><%= Format.currency_dec(@cv) %></td>
+</tr>
+<tr>
+    <td>Discounted CV</td>
+    <td align="right"><%= Format.currency_dec(@disc_cv) %></td>
+</tr>
+<tr>
+    <td>Sum of Explicit DCF</td>
+    <td align="right"><%= Format.currency_dec(@dcf_explicit) %></td>
+</tr>
+<tr>
+    <td>Enterprise Value</td>
+    <td align="right"><%= Format.currency_dec(@ev) %></td>
+</tr>
+<tr>
+    <td>Current Debt</td>
+    <td align="right"><%= Format.currency_dec(Statement.current_debt) %></td>
+</tr>
+<tr>
+    <td>Equity</td>
+    <td align="right"><%= Format.currency_dec(@equity) %></td>
+</tr>
+</table>
 <br />
 
+
 <%= link_to 'Add Year', new_statement_path %>
+<%= link_to 'Businesses', businesses_url %>

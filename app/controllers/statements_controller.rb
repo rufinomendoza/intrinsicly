@@ -5,6 +5,20 @@ class StatementsController < ApplicationController
     @statements = Statement.all
     @statements.sort_by!{|statement| statement.period}
 
+    @extra_year_dcf = @statements.last.dcf*(1+Statement.terminal)
+    @cv = @extra_year_dcf / (Statement.wacc-Statement.terminal)
+    @disc_cv = @statements.last.disc_factor * @cv
+
+    array=[]
+    @statements.each do |statement|
+      array << statement.dcf
+    end
+    @dcf_explicit = array.inject{|sum,x| sum + x }
+
+    @ev = @disc_cv + @dcf_explicit
+
+    @equity = @ev - Statement.current_debt
+
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @statements }

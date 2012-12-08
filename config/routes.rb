@@ -1,4 +1,8 @@
 Intrinsicly::Application.routes.draw do
+  resources :businesses
+
+  resources :sectors
+
   resources :statements
 
   root :to => 'statements#index'  

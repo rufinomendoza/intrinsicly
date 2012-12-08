@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  industry: MyString
+  wacc: 1.5
+  terminal: 1.5
+
+two:
+  name: MyString
+  industry: MyString
+  wacc: 1.5
+  terminal: 1.5

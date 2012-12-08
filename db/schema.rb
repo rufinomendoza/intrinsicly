@@ -11,7 +11,24 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121208170354) do
+ActiveRecord::Schema.define(:version => 20121208194216) do
+
+  create_table "businesses", :force => true do |t|
+    t.string   "name"
+    t.string   "industry"
+    t.float    "wacc"
+    t.float    "terminal"
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
+    t.float    "current_debt", :default => 0.0
+  end
+
+  create_table "sectors", :force => true do |t|
+    t.string   "name"
+    t.float    "wacc",       :default => 0.08
+    t.datetime "created_at",                   :null => false
+    t.datetime "updated_at",                   :null => false
+  end
 
   create_table "statements", :force => true do |t|
     t.integer  "period",     :default => 2012
