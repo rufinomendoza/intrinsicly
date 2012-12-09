@@ -10,51 +10,56 @@
       </ul>
     </div>
   <% end %>
+   <br>
+  <table class="table">
+  <td>
+    <div class="field">
+      <%= f.label :period %><a #href
+      <%= f.number_field :period %>
+    </div>
+    <div class="field">
+      <%= f.label :revenue %>
+      <%= f.text_field :revenue %>
+    </div>
+    <div class="field">
+      <p>Cost of Goods Sold</p>
+      <%= f.text_field :cgs %>
+    </div>
+  </td>
+  
+  <td > 
+    <div class="field">
+      <p>Operating Expenses</p>
+      <%= f.text_field :opex %>
+    </div>
+    <div class="field">
+      <p>Depreciation &amp; Amortization</p>
+      <%= f.text_field :da %>
+    </div>
+    <div class="field">
+      <p>Interest Expense</p> 
+      <%= f.text_field :interest %>
+    </div>
+  </td>
 
-  <div class="field">
-    <%= f.label :period %><br />
-    <%= f.number_field :period %>
+  <td>
+    <div class="field">
+      <p>Tax Expense</p> 
+      <%= f.text_field :tax %>
   </div>
   <div class="field">
-    <%= f.label :revenue %><br />
-    <%= f.text_field :revenue %>
+      <p>Capital Expenditures</p> 
+      <%= f.text_field :capex %>
   </div>
   <div class="field">
-    <p>Cost of Goods Sold</p>
-    <br />
-    <%= f.text_field :cgs %>
+      <p>Change in Net Working Capital</p> 
+      <%= f.text_field :nwc_chg %>
   </div>
-  <div class="field">
-    <p>Operating Expenses</p>
-    <br />
-    <%= f.text_field :opex %>
-  </div>
-  <div class="field">
-    <p>Depreciation &amp; Amortization</p>
-    <br />
-    <%= f.text_field :da %>
-  </div>
-  <div class="field">
-    <p>Interest Expense</p> 
-    <br />
-    <%= f.text_field :interest %>
-  </div>
-  <div class="field">
-    <p>Tax Expense</p> 
-    <br />
-    <%= f.text_field :tax %>
-  </div>
-  <div class="field">
-    <p>Capital Expenditures</p> 
-    <br />
-    <%= f.text_field :capex %>
-  </div>
-  <div class="field">
-    <p>Change in Net Working Capital</p> 
-    <br />
-    <%= f.text_field :nwc_chg %>
-  </div>
+   </td>
+  </table>
   <div class="actions">
-    <%= f.submit %>
+  <%= f.submit %>
   </div>
+ 
+
 <% end %>
