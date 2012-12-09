@@ -182,6 +182,7 @@ body {
   font-size: 14px;
   line-height: 20px;
   color: #333333;
+  padding-top: 105px;
 }
 
 a {
@@ -571,7 +572,7 @@ a:hover {
   width:940px;
   padding-left: 30px;
   padding-right: 30px;
-  margin-top: 30px;
+  margin-top: -5px;
   margin-left:50px;
   margin-right:50px;
   background-color:white;
@@ -705,6 +706,7 @@ h3 {
 
 h1 {
   font-size: 38.5px;
+  margin-top: 10px
 }
 
 h2 {
