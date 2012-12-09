@@ -4,10 +4,10 @@
 </thead>
 
 <tbody>
-<tr><td>DCF</td><td align="right"></td></tr>
-<tr><td>Market Valuation Approach</td><td align="right"></td></tr>
-<tr><td></td><td align="right"></td></tr>
-
+<tr><td>DCF</td><td align="right"><%= Format.currency(@equity) %></td></tr>
+<tr><td>Market Valuation Approach</td><td align="right">$6,623</td></tr>
+<tr><td>Transactions Approach</td><td align="right">$7,212</td></tr>
+<tr><td>Average</td><td align="right"><%= Format.currency(((6622.87+7212.05+@equity)/3)) %></td></tr>
 </tbody>
 
 </table>

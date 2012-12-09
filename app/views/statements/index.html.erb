@@ -11,35 +11,25 @@
       <li>
         <a href="#transaction" class="smoothScroll">Transaction Approach</a>
       </li>
-
+      <li>
+        <a href="#summary" class="smoothScroll">Summary</a>
+      </li>
     </ul>
   </div>
 </div>
 </div>
 
 <br />
-<h3>Discounted Cash Flow</h3>
+<h3>Income Statement</h3>
 <%= render 'financials' %>
 <%= link_to 'Add Year', new_statement_path, :class => 'btn btn-small' %>
 
 <br />
 <br />
 <br />
+<h3>Discounted Cash Flow</h3>
 <%= render 'calculations' %>
 <br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<a name="value"></a>
-<h2 style="text-align:center"><%= Statement.business_name %> is worth <%= Format.currency(@equity) %></h2>
 <br />
 <br />
 <br />
@@ -58,3 +48,20 @@
 <a name="transaction"></a>
 <h3>Transaction Approach</h3>
 <%= render 'transaction' %>
+<br />
+<br />
+<br />
+
+<a name="summary"></a>
+<h3>Summary</h3>
+<%= render 'summary' %>
+<br />
+
+<a name="value"></a>
+<h2 style="text-align:center"><%= Statement.business_name %> is worth <%= Format.currency(((6622.87+7212.05+@equity)/3)) %></h2>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
