@@ -2,6 +2,7 @@ class Statement < ActiveRecord::Base
   attr_accessible :capex, :cgs, :da, :opex, :period, :revenue, :tax, :interest, :nwc_chg
   validates_uniqueness_of :period
 
+
   def gp
     revenue-cgs
   end
