@@ -1,32 +1,50 @@
-<h2>Your business is worth <%= Format.currency(@equity) %></h2>
 
-<!--<div class="navbar navbar-fixed-top navbar-inverse">
+<a name="header"></a>
+
+<div class="navbar">
 <div class="navbar">
   <div class="navbar-inner">
     <ul class="nav">
       <li>
-        <a href="#statements" class="smoothScroll">Statements</a>
-      </li>
+        <a href="#header" class="smoothScroll">Top</a>
+      </li><br />
       <li>
-        <a href="#financials" class="smoothScroll">Calculations</a>
+        <a href="#value" class="smoothScroll">Your Value</a>
       </li>
-      <div class="nav pull-right">
-          <li>
-            <%= link_to 'Back', businesses_url %>
-          </li>
-      </div>
     </ul>
   </div>
 </div>
-</div>-->
+</div>
 
-<a name="financials"></a> 
+<br />
+<br />
+<br />
+<br />
+<h3>Financial Statements</h3>
 <%= render 'financials' %>
 
 <%= link_to 'Add Year', new_statement_path, :class => 'btn btn-small' %>
 
-<a name="calculations"></a> 
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
 <%= render 'calculations' %>
 
-<br />
 
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<a name="value"></a>
+<h2 style="text-align:center">Your business is worth <%= Format.currency(@equity) %></h2>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />

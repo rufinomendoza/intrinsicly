@@ -1910,7 +1910,7 @@ legend + .control-group {
 }
 
 table {
-  max-width: 100%;
+  max-width: 70%;
   background-color: transparent;
   border-collapse: collapse;
   border-spacing: 0;
@@ -1952,7 +1952,7 @@ table {
 
 .table-condensed th,
 .table-condensed td {
-  padding: 4px 5px;
+  padding: 0px 0px;
 }
 
 .table-bordered {
@@ -4200,15 +4200,17 @@ input[type="submit"].btn.btn-mini {
 }
 
 .navbar-inner {
+  position: fixed;
+  left: 90%;
   min-height: 40px;
   padding-right: 20px;
   padding-left: 20px;
-  background-color: #fafafa;
-  background-image: -moz-linear-gradient(top, #ffffff, #f2f2f2);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#f2f2f2));
-  background-image: -webkit-linear-gradient(top, #ffffff, #f2f2f2);
-  background-image: -o-linear-gradient(top, #ffffff, #f2f2f2);
-  background-image: linear-gradient(to bottom, #ffffff, #f2f2f2);
+  background-color: #335d6a;
+  background-image: -moz-linear-gradient(top, #335d6a, #335d6a);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#335d6a), to(#335d6a));
+  background-image: -webkit-linear-gradient(top, #335d6a, #335d6a);
+  background-image: -o-linear-gradient(top, #335d6a, #335d6a);
+  background-image: linear-gradient(to bottom, #335d6a, #335d6a);
   background-repeat: repeat-x;
   border: 1px solid #d4d4d4;
   -webkit-border-radius: 4px;
@@ -4220,6 +4222,8 @@ input[type="submit"].btn.btn-mini {
      -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
           box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
 }
+
+
 
 .navbar-inner:before,
 .navbar-inner:after {
@@ -4262,11 +4266,11 @@ input[type="submit"].btn.btn-mini {
 }
 
 .navbar-link {
-  color: #777777;
+  color: #f3f3f3;
 }
 
 .navbar-link:hover {
-  color: #333333;
+  color: #f3f3f3;
 }
 
 .navbar .divider-vertical {
@@ -4438,9 +4442,9 @@ input[type="submit"].btn.btn-mini {
 .navbar .nav > li > a {
   float: none;
   padding: 10px 15px 10px;
-  color: #777777;
+  color: #ffffff;
   text-decoration: none;
-  text-shadow: 0 1px 0 #ffffff;
+  text-shadow: 0 1px 0 #f3f3f3;
 }
 
 .navbar .nav .dropdown-toggle .caret {
@@ -4449,7 +4453,7 @@ input[type="submit"].btn.btn-mini {
 
 .navbar .nav > li > a:focus,
 .navbar .nav > li > a:hover {
-  color: #333333;
+  color: #f4f4f4;
   text-decoration: none;
   background-color: transparent;
 }
