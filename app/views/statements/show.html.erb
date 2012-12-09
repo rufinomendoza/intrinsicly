@@ -1,40 +1,42 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Period:</b>
-  <%= @statement.period %>
-</p>
+<table class="table table-hover">
+<tr>
+  <td><b></b></td>
+  <td align="right"><%= @statement.period %></td>
+</tr>
 
-<p>
-  <b>Revenue:</b>
-  <%= @statement.revenue %>
-</p>
+<tr>
+  <td><b>Revenue:</b></td>
+  <td align="right"><%= @statement.revenue %></td>
+</tr>
 
-<p>
-  <b>Cgs:</b>
-  <%= @statement.cgs %>
-</p>
+<tr>
+  <td><b>Cost of Goods</b></td>
+  <td align="right"><%= @statement.cgs %></td>
+</tr>
 
-<p>
-  <b>Opex:</b>
-  <%= @statement.opex %>
-</p>
+<tr>
+  <td><b>Operating Expenses:</b></td>
+  <td align="right"><%= @statement.opex %></td>
+</tr>
 
-<p>
-  <b>Da:</b>
-  <%= @statement.da %>
-</p>
+<tr>
+  <td><b>Depreciation and Amortization:</b></td>
+  <td align="right"><%= @statement.da %></td>
+</tr>
 
-<p>
-  <b>Tax:</b>
-  <%= @statement.tax %>
-</p>
+<tr>
+  <td><b>Taxes:</b></td>
+  <td align="right"><%= @statement.tax %></td>
+</tr>
 
-<p>
-  <b>Capex:</b>
-  <%= @statement.capex %>
-</p>
+<tr>
+  <td><b>Capex:</b></td>
+  <td align="right"><%= @statement.capex %></td>
+</tr>
+</table>
 
-
-<%= link_to 'Edit', edit_statement_path(@statement) %> |
-<%= link_to 'Back', statements_path %>
+<%= link_to 'Change Statements for This Year', edit_statement_path(@statement), :class => "btn btn-small" %>
+<%= link_to 'Add Another Year', new_statement_path, :class => "btn btn-small" %>
+<%= link_to 'Take Me to the Valuation', statements_path, :class => "btn btn-small" %>

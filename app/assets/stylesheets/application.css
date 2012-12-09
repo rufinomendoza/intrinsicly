@@ -178,8 +178,7 @@ textarea {
 
 body {
   background: url('bg4.png');
-  margin-top: 50px;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Crimson Text", Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
   font-size: 14px;
   line-height: 20px;
   color: #333333;
@@ -569,12 +568,17 @@ a:hover {
 }
 
 .container {
-  width:900px;
-  padding:50px;
+  width:940px;
+  padding-left: 30px;
+  padding-right: 30px;
+  margin-top: 30px;
+  margin-left:50px;
+  margin-right:50px;
   background-color:white;
   margin-right: auto;
   margin-left: auto;
   *zoom: 1;
+  box-shadow: 0px 5px 15px rgba(0,0,0,.3);
 }
 
 .container:before,
@@ -675,7 +679,7 @@ h4,
 h5,
 h6 {
   margin: 10px 0;
-  font-family: inherit;
+  font-family: "Crimson Text", Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
   font-weight: bold;
   line-height: 20px;
   color: inherit;
@@ -893,7 +897,7 @@ address {
 code,
 pre {
   padding: 0 3px 2px;
-  font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
+  font-family: "Crimson Text", Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
   font-size: 12px;
   color: #333333;
   -webkit-border-radius: 3px;
@@ -983,7 +987,7 @@ input,
 button,
 select,
 textarea {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Crimson Text", Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
 }
 
 label {
@@ -4338,7 +4342,7 @@ input[type="submit"].btn.btn-mini {
 .navbar-search .search-query {
   padding: 4px 14px;
   margin-bottom: 0;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Crimson Text", Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
   font-size: 13px;
   font-weight: normal;
   line-height: 1;

@@ -60,7 +60,7 @@ class StatementsController < ApplicationController
 
     respond_to do |format|
       if @statement.save
-        format.html { redirect_to statements_url, notice: 'Statement was successfully created.' }
+        format.html { redirect_to @statement, notice: 'Your inputs have successfully been entered.' }
         format.json { render json: @statement, status: :created, location: @statement }
       else
         format.html { render action: "new" }
@@ -76,7 +76,7 @@ class StatementsController < ApplicationController
 
     respond_to do |format|
       if @statement.update_attributes(params[:statement])
-        format.html { redirect_to statements_url, notice: 'Statement was successfully updated.' }
+        format.html { redirect_to statements_url, notice: 'Your inputs have successfully been entered.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
