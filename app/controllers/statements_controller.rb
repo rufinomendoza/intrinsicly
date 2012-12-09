@@ -11,7 +11,9 @@ class StatementsController < ApplicationController
 
     array=[]
     @statements.each do |statement|
-      array << statement.dcf
+      if statement.year_span > 0
+        array << statement.dcf
+      end
     end
     @dcf_explicit = array.inject{|sum,x| sum + x }
 
