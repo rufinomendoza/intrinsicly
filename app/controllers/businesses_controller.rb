@@ -41,6 +41,7 @@ class BusinessesController < ApplicationController
   # POST /businesses.json
   def create
     @business = Business.new(params[:business])
+    @business.wacc = 0.16
 
     respond_to do |format|
       if @business.save
