@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(:version => 20121208194216) do
   create_table "businesses", :force => true do |t|
     t.string   "name"
     t.string   "industry"
-    t.float    "wacc",         :default => 0.08
+    t.float    "wacc",         :default => 0.12
     t.float    "terminal",     :default => 0.03
     t.datetime "created_at",                     :null => false
     t.datetime "updated_at",                     :null => false
@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(:version => 20121208194216) do
   end
 
   create_table "statements", :force => true do |t|
-    t.integer  "period",     :default => 2012
+    t.integer  "period",     :default => 2013
     t.float    "revenue",    :default => 0.0
     t.float    "cgs",        :default => 0.0
     t.float    "opex",       :default => 0.0

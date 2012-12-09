@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>Intrinsicly</title>
+  <%= google_webfonts_link_tag "Crimson Text" %>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
@@ -10,10 +11,13 @@
 
 
 <body>
-<iframe name="mainf" src="http://www.yousefj.com/intrinsicly/" height="115" width=100% marginheight="0" marginwidth="0" frameborder="0" scrolling="no"></iframe>
+  <div class="navbar navbar-fixed-top navbar-inverse">
+        <iframe name="mainf" src="http://www.yousefj.com/intrinsicly/" height="115" width=100% marginheight="0" marginwidth="0" frameborder="0" scrolling="no" position="fixed"></iframe>
+  </div>
+
 
 <div class="container">
-
+<br />
 <%= yield %>
 </div>
 

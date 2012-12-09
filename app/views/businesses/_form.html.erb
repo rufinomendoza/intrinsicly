@@ -2,7 +2,6 @@
   <% if @business.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@business.errors.count, "error") %> prohibited this business from being saved:</h2>
-
       <ul>
       <% @business.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
@@ -11,13 +10,13 @@
     </div>
   <% end %>
 
-  <div class="field">
-    What's the name of your company?<br />
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    What industry are you in?<br />
-    <%= f.text_field :industry %>
+  <h4 style="text-align:center">What's the name of your company?</h4>
+  <p style="text-align:center"><%= f.text_field :name %></p>
+
+  <h4 style="text-align:center">What industry are you in?</h4>
+  <p style="text-align:center"><%= f.text_field :industry %></p>
+  <div class="actions" style="text-align:center">
+    <%= f.submit "Let's get started!" %>
   </div>
   <div class="field">
     <% f.label :wacc %><br />
@@ -30,8 +29,5 @@
   <div class="field">
     <% f.label :current_debt %><br />
     <% f.text_field :current_debt %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
   </div>
 <% end %>

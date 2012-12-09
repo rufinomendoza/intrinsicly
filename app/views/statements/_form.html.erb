@@ -5,7 +5,7 @@
 
       <ul>
       <% @statement.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
+        <li><%= msg %> </li>
       <% end %>
       </ul>
     </div>
@@ -25,27 +25,33 @@
     <%= f.text_field :cgs %>
   </div>
   <div class="field">
-    <%= f.label :opex %><br />
+    <p>Operating Expenses</p>
+    <br />
     <%= f.text_field :opex %>
   </div>
   <div class="field">
-    <%= f.label :da %><br />
+    <p>Depreciation &amp; Amortization</p>
+    <br />
     <%= f.text_field :da %>
   </div>
   <div class="field">
-    <%= f.label :interest %><br />
+    <p>Interest Expense</p> 
+    <br />
     <%= f.text_field :interest %>
   </div>
   <div class="field">
-    <%= f.label :tax %><br />
+    <p>Tax Expense</p> 
+    <br />
     <%= f.text_field :tax %>
   </div>
   <div class="field">
-    <%= f.label :capex %><br />
+    <p>Capital Expenditures</p> 
+    <br />
     <%= f.text_field :capex %>
   </div>
   <div class="field">
-    <%= f.label :nwc_chg %><br />
+    <p>Change in Net Working Capital</p> 
+    <br />
     <%= f.text_field :nwc_chg %>
   </div>
   <div class="actions">

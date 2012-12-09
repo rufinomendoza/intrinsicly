@@ -178,11 +178,11 @@ textarea {
 
 body {
   background: url('bg4.png');
-  margin-top: 50px;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Crimson Text", Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
   font-size: 14px;
   line-height: 20px;
   color: #333333;
+  padding-top: 105px;
 }
 
 a {
@@ -569,12 +569,17 @@ a:hover {
 }
 
 .container {
-  width:900px;
-  padding:50px;
+  width:940px;
+  padding-left: 30px;
+  padding-right: 30px;
+  margin-top: -5px;
+  margin-left:50px;
+  margin-right:50px;
   background-color:white;
   margin-right: auto;
   margin-left: auto;
   *zoom: 1;
+  box-shadow: 0px 5px 15px rgba(0,0,0,.3);
 }
 
 .container:before,
@@ -675,7 +680,7 @@ h4,
 h5,
 h6 {
   margin: 10px 0;
-  font-family: inherit;
+  font-family: "Crimson Text", Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
   font-weight: bold;
   line-height: 20px;
   color: inherit;
@@ -701,6 +706,7 @@ h3 {
 
 h1 {
   font-size: 38.5px;
+  margin-top: 10px
 }
 
 h2 {
@@ -893,7 +899,7 @@ address {
 code,
 pre {
   padding: 0 3px 2px;
-  font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
+  font-family: "Crimson Text", Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
   font-size: 12px;
   color: #333333;
   -webkit-border-radius: 3px;
@@ -983,7 +989,7 @@ input,
 button,
 select,
 textarea {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Crimson Text", Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
 }
 
 label {
@@ -1904,7 +1910,7 @@ legend + .control-group {
 }
 
 table {
-  max-width: 100%;
+  max-width: 70%;
   background-color: transparent;
   border-collapse: collapse;
   border-spacing: 0;
@@ -1946,7 +1952,7 @@ table {
 
 .table-condensed th,
 .table-condensed td {
-  padding: 4px 5px;
+  padding: 0px 0px;
 }
 
 .table-bordered {
@@ -4194,15 +4200,17 @@ input[type="submit"].btn.btn-mini {
 }
 
 .navbar-inner {
+  position: fixed;
+  left: 90%;
   min-height: 40px;
   padding-right: 20px;
   padding-left: 20px;
-  background-color: #fafafa;
-  background-image: -moz-linear-gradient(top, #ffffff, #f2f2f2);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#f2f2f2));
-  background-image: -webkit-linear-gradient(top, #ffffff, #f2f2f2);
-  background-image: -o-linear-gradient(top, #ffffff, #f2f2f2);
-  background-image: linear-gradient(to bottom, #ffffff, #f2f2f2);
+  background-color: #335d6a;
+  background-image: -moz-linear-gradient(top, #335d6a, #335d6a);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#335d6a), to(#335d6a));
+  background-image: -webkit-linear-gradient(top, #335d6a, #335d6a);
+  background-image: -o-linear-gradient(top, #335d6a, #335d6a);
+  background-image: linear-gradient(to bottom, #335d6a, #335d6a);
   background-repeat: repeat-x;
   border: 1px solid #d4d4d4;
   -webkit-border-radius: 4px;
@@ -4214,6 +4222,8 @@ input[type="submit"].btn.btn-mini {
      -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
           box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
 }
+
+
 
 .navbar-inner:before,
 .navbar-inner:after {
@@ -4256,11 +4266,11 @@ input[type="submit"].btn.btn-mini {
 }
 
 .navbar-link {
-  color: #777777;
+  color: #f3f3f3;
 }
 
 .navbar-link:hover {
-  color: #333333;
+  color: #f3f3f3;
 }
 
 .navbar .divider-vertical {
@@ -4338,7 +4348,7 @@ input[type="submit"].btn.btn-mini {
 .navbar-search .search-query {
   padding: 4px 14px;
   margin-bottom: 0;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Crimson Text", Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
   font-size: 13px;
   font-weight: normal;
   line-height: 1;
@@ -4432,9 +4442,9 @@ input[type="submit"].btn.btn-mini {
 .navbar .nav > li > a {
   float: none;
   padding: 10px 15px 10px;
-  color: #777777;
+  color: #ffffff;
   text-decoration: none;
-  text-shadow: 0 1px 0 #ffffff;
+  text-shadow: 0 1px 0 #f3f3f3;
 }
 
 .navbar .nav .dropdown-toggle .caret {
@@ -4443,7 +4453,7 @@ input[type="submit"].btn.btn-mini {
 
 .navbar .nav > li > a:focus,
 .navbar .nav > li > a:hover {
-  color: #333333;
+  color: #f4f4f4;
   text-decoration: none;
   background-color: transparent;
 }
