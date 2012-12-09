@@ -1,7 +1,7 @@
 class CreateStatements < ActiveRecord::Migration
   def change
     create_table :statements do |t|
-      t.integer :period, :default => 2012
+      t.integer :period, :default => 2013
       t.float :revenue, :default => 0.0
       t.float :cgs, :default => 0.0
       t.float :opex, :default => 0.0
