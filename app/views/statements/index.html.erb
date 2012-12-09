@@ -6,7 +6,7 @@
         <a href="#value" class="smoothScroll">Your Value</a>
       </li>
       <li>
-        <a href="#header" class="smoothScroll">Top</a>
+        <a href="#multiples" class="smoothScroll">Market Valuation</a>
       </li>
     </ul>
   </div>
@@ -14,7 +14,7 @@
 </div>
 
 <br />
-<h3>Income Statement</h3>
+<h3>Discounted Cash Flow</h3>
 <%= render 'financials' %>
 
 <%= link_to 'Add Year', new_statement_path, :class => 'btn btn-small' %>
@@ -52,3 +52,6 @@
 <br />
 <br />
 <br />
+<a name="multiples"></a>
+<h3>Market Valuation Approach</h3>
+<%= render 'multiples' %>
