@@ -15,6 +15,7 @@ class StatementsController < ApplicationController
         array << statement.dcf
       end
     end
+    
     @dcf_explicit = array.inject{|sum,x| sum + x }
 
     @ev = @disc_cv + @dcf_explicit

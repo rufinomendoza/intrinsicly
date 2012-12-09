@@ -8,32 +8,32 @@
 
 <tr>
   <td><b>Revenue:</b></td>
-  <td align="right"><%= @statement.revenue %></td>
+  <td align="right"><%= Format.currency(@statement.revenue) %></td>
 </tr>
 
 <tr>
   <td><b>Cost of Goods</b></td>
-  <td align="right"><%= @statement.cgs %></td>
+  <td align="right"><%= Format.comma(@statement.cgs) %></td>
 </tr>
 
 <tr>
   <td><b>Operating Expenses:</b></td>
-  <td align="right"><%= @statement.opex %></td>
+  <td align="right"><%= Format.comma(@statement.opex) %></td>
 </tr>
 
 <tr>
   <td><b>Depreciation and Amortization:</b></td>
-  <td align="right"><%= @statement.da %></td>
+  <td align="right"><%= Format.comma(@statement.da) %></td>
 </tr>
 
 <tr>
   <td><b>Taxes:</b></td>
-  <td align="right"><%= @statement.tax %></td>
+  <td align="right"><%= Format.comma(@statement.tax) %></td>
 </tr>
 
 <tr>
   <td><b>Capex:</b></td>
-  <td align="right"><%= @statement.capex %></td>
+  <td align="right"><%= Format.comma(@statement.capex) %></td>
 </tr>
 </table>
 

@@ -55,6 +55,11 @@ class Statement < ActiveRecord::Base
     fcf*disc_factor
   end
 
+  def self.business_name
+    @business = Business.last # Change this to linked to user
+    @business.name
+  end
+
   def self.terminal
     @business = Business.last # Change this to linked to user
     @business.terminal
