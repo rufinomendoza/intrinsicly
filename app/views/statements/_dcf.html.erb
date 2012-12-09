@@ -1,0 +1,90 @@
+<table class="table table-hover">
+    <th><% @statements.each do |statement| %>
+    <td align="right" style="font-weight:bold"><%= statement.period %></td>
+    <% end %></th>
+
+<!--
+        <tr><td>EBIAT</td>
+        <% @statements.each do |statement| %>
+        <td align="right"><%= Format.comma(statement.ebiat) %></td>
+        <% end %></tr>
+
+    <tr><td>Add Back D&A</td>
+        <% @statements.each do |statement| %>
+        <td align="right" style="border-bottom: solid 1px"><%= Format.comma(statement.da) %></td>
+        <% end %></tr>
+-->
+    <tr><td>Operating Cash Flow</td>
+        <% @statements.each do |statement| %>
+        <td align="right"><%= Format.comma(statement.ocf) %></td>
+        <% end %></tr>        
+    
+    <tr><td>Capex</td>
+        <% @statements.each do |statement| %>
+        <td align="right"><%= Format.comma(statement.capex) %></td>
+        <% end %></tr>
+
+    <tr><td>Change in NWC</td>
+        <% @statements.each do |statement| %>
+        <td align="right" style="border-bottom: solid 1px"><%= Format.currency(statement.nwc_chg) %></td>
+        <% end %></tr>
+
+    <tr><td><b>Free Cash Flow</b></td>
+        <% @statements.each do |statement| %>
+        <td align="right"><b><%= Format.currency(statement.fcf) %></b></td>
+        <% end %></tr>
+
+<!--    <tr><td>Time Span</td>
+        <% @statements.each do |statement| %>
+        <td align="right"><%= Format.comma(statement.year_span) %></td>
+        <% end %></tr>
+    
+    <tr><td>Discount Factor</td>
+        <% @statements.each do |statement| %>
+        <td align="right"><%= Format.comma_four(statement.disc_factor) %></td>
+        <% end %></tr>
+-->
+    <tr><td>Discounted Cash Flow</td>
+        <% @statements.each do |statement| %>
+        <td align="right"><%= Format.currency_dec(statement.dcf) %></td>
+        <% end %></tr>
+
+</table>
+
+<table class="table table-hover">
+<tr><td>Terminal Growth Rate</td>
+    <td align="right"><%= Format.percent_dec(Statement.terminal*100) %></td>
+</tr>
+
+<tr><td>WACC</td>
+    <td align="right"><%= Format.percent_dec(Statement.wacc*100) %></td>
+</tr>
+<tr>
+    <td>Extra Year DCF</td>
+    <td align="right"><%= Format.currency_dec(@extra_year_fcf) %></td>
+</tr>
+<tr>
+    <td>Continuing Value</td>
+    <td align="right"><%= Format.currency_dec(@cv) %></td>
+</tr>
+<tr>
+    <td>Discounted CV</td>
+    <td align="right"><%= Format.currency_dec(@disc_cv) %></td>
+</tr>
+<tr>
+    <td>Sum of Explicit DCF</td>
+    <td align="right"><%= Format.currency_dec(@dcf_explicit) %></td>
+</tr>
+<tr>
+    <td>Enterprise Value</td>
+    <td align="right" style="font-weight:bold"><%= Format.currency_dec(@ev) %></td>
+</tr>
+<!--<tr>
+    <td>Net Debt</td>
+    <td align="right"><%= Format.currency_dec(Statement.current_debt) %></td>
+</tr>
+<tr>
+    <td style="font-weight:bold">Equity</td>
+    <td align="right" style="font-weight:bold"><%= Format.currency_dec(@equity) %></td>
+</tr>-->
+</table>

@@ -6,6 +6,12 @@
         <a href="#value" class="smoothScroll">Your Value</a>
       </li>-->
       <li>
+        <a href="#is" class="smoothScroll">Financial Summary</a>
+      </li>
+      <li>
+        <a href="#dcf" class="smoothScroll">Discounted Cash Flow</a>
+      </li>
+      <li>
         <a href="#multiples" class="smoothScroll">Market Valuation</a>
       </li>
       <li>
@@ -20,15 +26,25 @@
 </div>
 
 <br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<a name="is"></a>
 <h3>Income Statement</h3>
 <%= render 'financials' %>
 <%= link_to 'Add Year', new_statement_path, :class => 'btn btn-small' %>
-
+<br />
+<br />
+<br />
+<a name="dcf"></a>
 <br />
 <br />
 <br />
 <h3>Discounted Cash Flow</h3>
-<%= render 'calculations' %>
+<%= render 'dcf' %>
 <br />
 <br />
 <br />
@@ -51,6 +67,9 @@
 <br />
 <br />
 <br />
+<br />
+<br />
+<br />
 
 <a name="summary"></a>
 <h3>Summary</h3>
@@ -58,7 +77,11 @@
 <br />
 
 <a name="value"></a>
-<h2 style="text-align:center"><%= Statement.business_name %> is worth <%= Format.currency(((6622.87+7212.05+@equity)/3)) %></h2>
+<h2 style="text-align:center"><%= Statement.business_name %> is worth <%= Format.currency(((6622.87+7212.05+@ev)/3)) %></h2>
+<br />
+<br />
+<br />
+<br />
 <br />
 <br />
 <br />

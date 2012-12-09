@@ -1,6 +1,6 @@
-<table class="table table-hover table-condensed">
+<table class="table table-hover">
     <th><% @statements.each do |statement| %>
-    <td align="right"><%= statement.period %></td>
+    <td align="right" style="font-weight:bold"><%= statement.period %></td>
     <% end %></th>
 
     <tr><td>Revenue</td>
@@ -63,58 +63,7 @@
         <td align="right"><b><%= Format.comma(statement.net_income) %></b></td>
         <% end %></tr>
 
-<!--This is a line break -->
-    <tr><td height="50">     </td>
-        <% @statements.each do |statement| %>
-        <td align="right"><% Format.comma(statement.net_income) %></td>
-        <% end %></tr>
-
-        <tr><td>EBIAT</td>
-        <% @statements.each do |statement| %>
-        <td align="right"><%= Format.comma(statement.ebiat) %></td>
-        <% end %></tr>
-
-    <tr><td>Add Back D&A</td>
-        <% @statements.each do |statement| %>
-        <td align="right" style="border-bottom: solid 1px"><%= Format.comma(statement.da) %></td>
-        <% end %></tr>
-
-    <tr><td>Operating Cash Flow</td>
-        <% @statements.each do |statement| %>
-        <td align="right"><%= Format.comma(statement.ocf) %></td>
-        <% end %></tr>        
-    
-    <tr><td>Capex</td>
-        <% @statements.each do |statement| %>
-        <td align="right"><%= Format.comma(statement.capex) %></td>
-        <% end %></tr>
-
-    <tr><td>Change in NWC</td>
-        <% @statements.each do |statement| %>
-        <td align="right" style="border-bottom: solid 1px"><%= Format.currency(statement.nwc_chg) %></td>
-        <% end %></tr>
-
-    <tr><td><b>Free Cash Flow</b></td>
-        <% @statements.each do |statement| %>
-        <td align="right"><b><%= Format.currency(statement.fcf) %></b></td>
-        <% end %></tr>
-
-    <tr><td>Time Span</td>
-        <% @statements.each do |statement| %>
-        <td align="right"><%= Format.comma(statement.year_span) %></td>
-        <% end %></tr>
-    
-    <tr><td>Discount Factor</td>
-        <% @statements.each do |statement| %>
-        <td align="right"><%= Format.comma_four(statement.disc_factor) %></td>
-        <% end %></tr>
-
-    <tr><td>Discounted Cash Flow</td>
-        <% @statements.each do |statement| %>
-        <td align="right"><%= Format.currency_dec(statement.dcf) %></td>
-        <% end %></tr>
-
-    <tr><td> </td>
+        <tr><td> </td>
         <% @statements.each do |statement| %>
         <td align="right"><%= link_to 'Edit', edit_statement_path(statement), :class => "btn btn-small" %></td>
         <% end %></tr>
@@ -123,4 +72,5 @@
         <% @statements.each do |statement| %>
         <td align="right"><%= link_to 'Delete', statement, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-small" %></td>
         <% end %></tr>
+
 </table>
