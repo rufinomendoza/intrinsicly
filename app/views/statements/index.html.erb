@@ -2,12 +2,16 @@
 <div class="navbar">
   <div class="navbar-inner">
     <ul class="nav">
-      <li>
+      <!--<li>
         <a href="#value" class="smoothScroll">Your Value</a>
-      </li>
+      </li>-->
       <li>
         <a href="#multiples" class="smoothScroll">Market Valuation</a>
       </li>
+      <li>
+        <a href="#transaction" class="smoothScroll">Transaction Approach</a>
+      </li>
+
     </ul>
   </div>
 </div>
@@ -16,34 +20,24 @@
 <br />
 <h3>Discounted Cash Flow</h3>
 <%= render 'financials' %>
-
 <%= link_to 'Add Year', new_statement_path, :class => 'btn btn-small' %>
 
 <br />
 <br />
 <br />
-<br />
-<br />
-<br />
 <%= render 'calculations' %>
-
-
 <br />
 <br />
 <br />
 <br />
 <br />
 <br />
-<h2>
-
-
 <br />
 <br />
 <br />
 <br />
 <br />
 <br />
-
 <a name="value"></a>
 <h2 style="text-align:center"><%= Statement.business_name %> is worth <%= Format.currency(@equity) %></h2>
 <br />
@@ -55,3 +49,12 @@
 <a name="multiples"></a>
 <h3>Market Valuation Approach</h3>
 <%= render 'multiples' %>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<a name="transaction"></a>
+<h3>Transaction Approach</h3>
+<%= render 'transaction' %>
