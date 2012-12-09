@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  period: 1
+  revenue: 1.5
+  cgs: 1.5
+  opex: 1.5
+  da: 1.5
+  tax: 1.5
+  capex: 1.5
+
+two:
+  period: 1
+  revenue: 1.5
+  cgs: 1.5
+  opex: 1.5
+  da: 1.5
+  tax: 1.5
+  capex: 1.5

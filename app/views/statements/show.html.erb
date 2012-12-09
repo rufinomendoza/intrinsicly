@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Period:</b>
+  <%= @statement.period %>
+</p>
+
+<p>
+  <b>Revenue:</b>
+  <%= @statement.revenue %>
+</p>
+
+<p>
+  <b>Cgs:</b>
+  <%= @statement.cgs %>
+</p>
+
+<p>
+  <b>Opex:</b>
+  <%= @statement.opex %>
+</p>
+
+<p>
+  <b>Da:</b>
+  <%= @statement.da %>
+</p>
+
+<p>
+  <b>Tax:</b>
+  <%= @statement.tax %>
+</p>
+
+<p>
+  <b>Capex:</b>
+  <%= @statement.capex %>
+</p>
+
+
+<%= link_to 'Edit', edit_statement_path(@statement) %> |
+<%= link_to 'Back', statements_path %>

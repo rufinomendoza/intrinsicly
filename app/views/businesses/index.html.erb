@@ -1,0 +1,31 @@
+<h1>Listing businesses</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Industry</th>
+    <th>Wacc</th>
+    <th>Terminal</th>
+    <th>Current Debt</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @businesses.each do |business| %>
+  <tr>
+    <td><%= business.name %></td>
+    <td><%= business.industry %></td>
+    <td><%= business.wacc %></td>
+    <td><%= business.terminal %></td>
+    <td><%= business.current_debt %></td>
+    <td><%= link_to 'Edit', edit_business_path(business) %></td>
+    <td><%= link_to 'Delete', business, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<% link_to 'New Business', new_business_path %>
+<%= link_to 'Valuation', statements_url %>

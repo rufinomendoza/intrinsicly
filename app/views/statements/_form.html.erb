@@ -1,0 +1,54 @@
+<%= form_for(@statement) do |f| %>
+  <% if @statement.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@statement.errors.count, "error") %> prohibited this statement from being saved:</h2>
+
+      <ul>
+      <% @statement.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :period %><br />
+    <%= f.number_field :period %>
+  </div>
+  <div class="field">
+    <%= f.label :revenue %><br />
+    <%= f.text_field :revenue %>
+  </div>
+  <div class="field">
+    <p>Cost of Goods Sold</p>
+    <br />
+    <%= f.text_field :cgs %>
+  </div>
+  <div class="field">
+    <%= f.label :opex %><br />
+    <%= f.text_field :opex %>
+  </div>
+  <div class="field">
+    <%= f.label :da %><br />
+    <%= f.text_field :da %>
+  </div>
+  <div class="field">
+    <%= f.label :interest %><br />
+    <%= f.text_field :interest %>
+  </div>
+  <div class="field">
+    <%= f.label :tax %><br />
+    <%= f.text_field :tax %>
+  </div>
+  <div class="field">
+    <%= f.label :capex %><br />
+    <%= f.text_field :capex %>
+  </div>
+  <div class="field">
+    <%= f.label :nwc_chg %><br />
+    <%= f.text_field :nwc_chg %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
